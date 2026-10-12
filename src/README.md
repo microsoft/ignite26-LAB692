@@ -1,5 +1,18 @@
 # Source
 
-<!-- IGNITE TEMPLATE PLACEHOLDER: remove this folder when the session needs no source files. -->
+This folder contains the Python dependency and environment configuration used by the lab notebooks.
 
-Use this folder for sample code, demos, or runnable source material.
+Create your local environment file before running the notebooks:
+
+```powershell
+Copy-Item src/.env.sample src/.env
+```
+
+Fill in `src/.env` with the values provided by the lab environment. The local `.env` file is ignored
+by Git and must not be committed.
+
+From the repository root, install the dependencies with:
+
+```powershell
+python -m pip install -r src/requirements.txt
+```

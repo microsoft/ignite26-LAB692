@@ -15,16 +15,15 @@
 # =============================================================================
 # Set HorizonDB Firewall Rules
 # -----------------------------------------------------------------------------
-# Runs in the Skillable Lab Lifecycle (After VM Build) stage, AFTER
-# deployment_build2026.ps1 has completed its Bicep deployment AND
-# replace_tokens.ps1 has produced C:\Lab\.env.
+# Runs in the Skillable Lab Lifecycle (After VM Build) stage after
+# infrastructure deployment and environment configuration have completed.
 #
 # This script:
 #   1. Receives Skillable @lab tokens (subscription, RG, SP creds).
 #   2. Acquires an ARM access token via the lab's service-principal
 #      (client_credentials flow).
 #   3. Reads the outputs of the most recent successful 'lab-*' ARM deployment
-#      in the resource group (produced by infra5/deploy.bicep) to obtain the
+#      in the resource group (produced by deploy.bicep) to obtain the
 #      HorizonDB cluster name.
 #   4. Creates HorizonDB firewall rules via ARM REST:
 #         - AllowAzureServices (0.0.0.0 / 0.0.0.0)
@@ -79,7 +78,7 @@ $headers = @{
 }
 
 # ================== Locate latest successful deployment ======================
-# deployment_build2026.ps1 uses deployment names like "lab-yyyyMMdd-HHmmss".
+# The deployment script uses deployment names like "lab-yyyyMMdd-HHmmss".
 Write-Log "Locating latest successful ARM deployment in $resourceGroupName..."
 $deploymentsUrl  = "https://management.azure.com/subscriptions/$subscriptionId/resourcegroups/$resourceGroupName/providers/Microsoft.Resources/deployments?api-version=2021-04-01"
 $deploymentsResp = Invoke-RestMethod -Uri $deploymentsUrl -Headers $headers -Method Get

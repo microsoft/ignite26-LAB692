@@ -29,7 +29,7 @@ param replicaCount int = 2
 param administratorLoginPassword string = 'Z${uniqueString(newGuid())}!'
 
 module base './deploy.bicep' = {
-  name: 'build2026BaseInfra'
+  name: 'baseInfrastructure'
   params: {
     nameSuffix: nameSuffix
     location: location

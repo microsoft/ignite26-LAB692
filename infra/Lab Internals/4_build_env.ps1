@@ -23,7 +23,7 @@
 #   2. Acquires an ARM access token via the lab's service-principal
 #      (client_credentials flow).
 #   3. Reads the outputs of the most recent successful ARM deployment in the
-#      resource group (produced by infra5/deploy.bicep), specifically:
+#      resource group (produced by deploy.bicep), specifically:
 #         - clusterFqdn                        -> AZURE_PG_HOST
 #         - clusterFqdnReadOnly                -> AZURE_PG_HOST_READONLY
 #         - adminLogin (labUser)               -> AZURE_PG_USER
@@ -85,7 +85,7 @@ $headers = @{
 }
 
 # ================== Locate latest successful deployment ======================
-# deployment_build2026.ps1 uses deployment names like "lab-yyyyMMdd-HHmmss".
+# The deployment script uses deployment names like "lab-yyyyMMdd-HHmmss".
 Write-Log "Locating latest successful ARM deployment in $resourceGroupName..."
 $deploymentsUrl  = "https://management.azure.com/subscriptions/$subscriptionId/resourcegroups/$resourceGroupName/providers/Microsoft.Resources/deployments?api-version=2021-04-01"
 $deploymentsResp = Invoke-RestMethod -Uri $deploymentsUrl -Headers $headers -Method Get

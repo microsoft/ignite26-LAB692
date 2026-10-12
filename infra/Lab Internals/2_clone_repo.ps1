@@ -15,8 +15,8 @@
 # =============================================================================
 # Clone Repo
 # -----------------------------------------------------------------------------
-# Runs FIRST in the Skillable Lab Lifecycle (After VM Build) stage, BEFORE
-# deployment_build2026.ps1, replace_tokens.ps1, and post_deploy.ps1.
+# Runs first in the Skillable Lab Lifecycle (After VM Build) stage, before
+# infrastructure deployment and post-deployment configuration.
 #
 # This script:
 #   1. Verifies git is installed (installs via winget as a last resort).
