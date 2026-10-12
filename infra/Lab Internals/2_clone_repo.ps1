@@ -20,7 +20,7 @@
 #
 # This script:
 #   1. Verifies git is installed (installs via winget as a last resort).
-#   2. Clones https://github.com/jjfrost/build-2026-lab into C:\Lab.
+#   2. Clones https://github.com/microsoft/ignite26-LAB692 into C:\Lab.
 #   3. Retries the clone with exponential backoff if it fails.
 #   4. Verifies the clone succeeded by checking for the .git folder and at
 #      least one expected file (readme.md).
@@ -68,7 +68,7 @@ if (Test-Path $targetDir) {
 }
 
 # ================== Configuration ============================================
-$repoUrl      = "https://github.com/jjfrost/build-2026-lab"
+$repoUrl      = "https://github.com/microsoft/ignite26-LAB692"
 $tempRoot     = "C:\LabTemp"
 $maxAttempts  = 10
 $initialDelay = 5     # seconds; doubles each retry

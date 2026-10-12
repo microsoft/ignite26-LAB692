@@ -35,7 +35,7 @@ $rgName               = "@lab.CloudResourceGroup(ResourceGroup1).Name"
 $aadUserPrincipalName = "@lab.CloudPortalCredential(User1).Username"
 
 # Your Bicep file
-$bicepPath      = "C:\Lab\Infra\deploy.bicep"
+$bicepPath      = "C:\Lab\infra\deploy.bicep"
 # Where to write compiled JSON
 $templateJson   = [System.IO.Path]::ChangeExtension($bicepPath, ".json")
 
