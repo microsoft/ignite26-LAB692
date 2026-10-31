@@ -35,7 +35,7 @@ Fill in the sections below yourself, then:
 ## 🔥LAB692: Build a grounded AI agent with Azure HorizonDB for PostgreSQL
 ### Session description
 
-Add your session description here. Keep it concise — 2-3 sentences about what attendees will learn and why it matters.
+Your agent is only as good as the data behind it. Join us to build a working agent that retrieves trusted context from operational PostgreSQL data in Azure HorizonDB. Create an AI pipeline, generate embeddings, combine vector and keyword retrieval, apply filters, and connect results to an agent workflow. Leave with a reusable architecture and working implementation.
 
 ### 🚀 Getting started
 
